@@ -3,15 +3,12 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 export default function Home({ results }) {
-  
+
   return (
     <>
       <Seo title="Home" />
       {results?.map((movie) => (
-          <Link href={{
-            pathname: `/movies/${movie.id}`,
-            query: { title: movie.title },
-          }} as={`/movies/${movie.id}`} key={movie.id}>
+          <Link href={`/movies/${movie.title}/${movie.id}`} key={movie.id}>
             <img src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} />
             <h4>{movie.title}</h4>
           </Link>))}
