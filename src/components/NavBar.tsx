@@ -5,8 +5,11 @@ import styles from './NavBar.module.scss'
 export default function NavBar() {
   const router = useRouter();
 
-  return <nav>
-    <Link className={ router.pathname === "/" ? styles.active : "" } href="/">Home</Link>
-    <Link className={ router.pathname === "/about" ? styles.active : "" } href="/about">About</Link>
-  </nav>
+  return (
+    <nav>
+      <img src="/vercel.svg" />
+      <Link className={ router.pathname === "/" ? styles.active : "" } href="/">Home</Link>
+      <Link className={ router.pathname === "/about" ? styles.active : "" } href="/about">About</Link>
+    </nav>
+  )
 }
